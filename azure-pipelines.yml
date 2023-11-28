@@ -9,7 +9,7 @@ steps:
   displayName: 'JFrog NuGet restore Billing API'
   inputs:
     command: 'restore'
-    artifactoryConnection: 'JFrogArtifactoryV2-SaaS'
+    artifactoryConnection: 'unum'
     targetResolveRepo: 'unum-and-nuget'
     solutionPath: 'src/API/HIP_Billing_API.sln'
     noNuGetCache: true
@@ -17,9 +17,3 @@ steps:
     collectBuildInfo: true
     buildName: 'Test-nuget'
     buildNumber: '1.0.0'
-- task: JFrogPublishBuildInfo@1
-  inputs:
-    artifactoryConnection: 'unum'
-    buildName: 'Test-nunget'
-    buildNumber: '1.0.0'
-    projectKey: 'nuget'
